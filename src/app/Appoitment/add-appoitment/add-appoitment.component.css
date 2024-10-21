@@ -124,7 +124,11 @@ footer{
 .dt{
     justify-content: space-evenly;
     display: flex;
-    
+    font-family: arial;
+    margin-bottom: 60px;
+}
+.co{
+    background-color:#f8f8f8;
 }
 .footer{
     background-color: #000;
@@ -133,4 +137,3 @@ footer{
 .te{
     text-align:center;
 }
-

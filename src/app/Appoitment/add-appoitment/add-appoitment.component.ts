@@ -1,15 +1,14 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';  // Import RouterModule
+//import { routes } from '../../app.routes';  // Correct path
+
+
 
 @Component({
   selector: 'app-add-appoitment',
-  standalone: true,
-  imports: [],
+  standalone: true,  // Mark the component as standalone
   templateUrl: './add-appoitment.component.html',
-  styleUrl: './add-appoitment.component.css',
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./add-appoitment.component.css'],
+  imports: [RouterModule]  // Import RouterModule here
 })
-export class AddAppoitmentComponent {
-  
-
-}
-
+export class AddAppoitmentComponent { }
