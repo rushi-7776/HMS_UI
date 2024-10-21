@@ -1,11 +1,19 @@
-<table style="width: 100%;">
-    <tr> 
-            <app-add-appoitment></app-add-appoitment>
-    </tr>
-</table>
-<nav>
-    <app-appointment></app-appointment>
-  </nav>
-  
-  <router-outlet></router-outlet>
+ <header>
+    <div class="container">
+        <img src="logoo.jpeg" alt="Logo" class="logo">
+        <h2 class="doctorn">Doctoral</h2> 
+           <div class="items">
+               <a routerLink="home">Home</a>             
+               <a routerLink="aboutus"> AboutUs</a>              
+               <a routerLink="services">Services</a>
+               <a routerLink="contactus">contact</a>
+               
+           </div>
+    </div>
+   </header>    
+   <div class="container" style="margin-top: 82px;">
+    <router-outlet></router-outlet>
+   </div>
+   
+
   
