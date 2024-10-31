@@ -1,0 +1,48 @@
+<div class="head">
+    <h1>Appoitments</h1>
+</div>
+<div class="dis">
+    <div class="gan">
+        <h1>Get Appoitment Now!</h1> 
+        <p>You will be notified via email soon. The customer is very important,
+             the customer will be followed by the customer.</p>
+          <p>I am a text block. Click the edit button to change this text.
+             The customer is very important, the customer will be followed by the customer.
+              As the land of the land, the mourning nor the corporal of the land, 
+              the pillow of the lion.</p>
+              <div class="appoit">
+                <img src="appoitment.jpeg" alt="1">
+         </div>
+    </div>
+    <div class="reg">
+        <div class="register-container">
+            <h1>Register Appoitment  </h1><br>
+            <h3>Appoitment of  {{ doctor }}</h3>
+            <p><strong>Date:</strong> {{ date }}</p>
+            <p><strong>Time:</strong> {{ time }}</p><br>
+            <form>          
+                <div>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName"  required>
+                </div>
+                <div>
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="PhoneNo">PhoneNo:</label>
+                    <input type="text" id="PhoneNo" name="PhoneNo" required>
+                </div>
+                <div>
+                    <label for="address">Address:</label>
+                    <input type="text" id="addres" name="address" required>
+                </div>         
+                <button  (click)="register()" type="button">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

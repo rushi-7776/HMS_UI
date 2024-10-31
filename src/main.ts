@@ -4,6 +4,7 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes'; // Adjusted path
 
 
+
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(routes) // Use provideRouter to set up routing

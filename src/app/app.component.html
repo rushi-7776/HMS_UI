@@ -7,12 +7,33 @@
                <a routerLink="aboutus"> AboutUs</a>              
                <a routerLink="services">Services</a>
                <a routerLink="contactus">contact</a>
-               
-           </div>
-    </div>
-   </header>    
+               <div>
+                <button  routerLink="/appoitment" class="btn-primary">MAKE APPOITMENT</button>
+               </div>
+          </div>
+        </div>
+   </header>   
+  
    <div class="container" style="margin-top: 82px;">
     <router-outlet></router-outlet>
+   </div>
+   <div>
+    <footer class="footer">
+           <div class="container">
+            <img src="logoo.jpeg" alt="Logo" class="logo">
+            <h2 class="doctorn">Doctorol</h2>
+           </div>
+           <div id="footrid">
+            <h3>Our Services</h3>
+            <h5>Bills & Insurence</h5>
+           </div>
+           <div id="footrid">
+            <h3>Specialist Doctors</h3>
+           </div>
+           <div id="footrid">
+            <h3>The Heart Of Clinic</h3>
+           </div>
+    </footer>
    </div>
    
 
