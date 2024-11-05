@@ -10,6 +10,9 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./appoitment.component.css'],
 })
 export class AppoitmentComponent {
+encodeURIComponent(arg0: string): any|string {
+throw new Error('Method not implemented.');
+}
 // Define your appointment data here
 appointment = [
   { specialty: 'Neurologist', doctor: 'Dr.Anka Arora', date: 'October 30, 2024', time: '10:00 AM', image: 'spec1.jpeg' },

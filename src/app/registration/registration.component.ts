@@ -1,25 +1,26 @@
-import { Component, inject, NgModule, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { AppointmentService } from '../appointment.service';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 @Component({
   selector: 'app-registration',
   standalone: true,
-  imports: [],
+  imports: [FormsModule], // Add FormsModule to imports
   templateUrl: './registration.component.html',
-  styleUrl: './registration.component.css'
+  styleUrls: ['./registration.component.css'] // Fix 'styleUrl' to 'styleUrls'
 })
-export class RegistrationComponent implements OnInit{
+export class RegistrationComponent implements OnInit {
   doctor: string | null = '';
   date: string | null = '';
   time: string | null = '';
-  firstName:String  | null = '';
-  lastName:String  | null = '';
-  email:string  | null = '';
-  PhoneNo: string  | null = '';
-  address:string  | null = '';
+  firstName: string = '';
+  lastName: string = '';
+  email: string = '';
+  PhoneNo: string = '';
+  address: string | null = '';
 
-  constructor(private route: ActivatedRoute){}
+  constructor(private route: ActivatedRoute, private appointmentService: AppointmentService) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -28,11 +29,28 @@ export class RegistrationComponent implements OnInit{
       this.time = params.get('time') || '';
     });
   }
-  register() 
-  {
-    // Implement registration logic here
-    console.log(`Registering appointment with ${this.doctor} on ${this.date} at ${this.time}`);
-    alert(`Appointment registered with ${this.doctor} on ${this.date} at ${this.time}`);
+
+  register() {
+    const registrationData = {
+      doctor: this.doctor,
+      date: this.date,
+      time: this.time,
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      PhoneNo: this.PhoneNo,
+      address: this.address
+    };
+
+    this.appointmentService.registerAppointment(registrationData).subscribe(
+      (response: any) => {
+        console.log('Registration successful:', response);
+        alert(`Appointment registered with ${this.doctor} on ${this.date} at ${this.time}`);
+      },
+      (error: any) => {
+        console.error('Error registering appointment:', error);
+        alert('Error registering appointment. Please try again.');
+      }
+    );
   }
 }
-    

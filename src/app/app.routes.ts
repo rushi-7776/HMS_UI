@@ -6,11 +6,11 @@
   import { HomeComponent } from './home/home.component';
   import { RegistrationComponent } from './registration/registration.component';
   import { AppoitmentComponent } from './appoitment/appoitment.component';
-import { BrowserModule } from '@angular/platform-browser';
+  import { BrowserModule } from '@angular/platform-browser';
 
 
   export const routes: Routes = [
-    { path: 'home', component: HomeComponent },  // Fixed typo in the component name and path
+    { path: 'home', component: HomeComponent }, 
     { path: 'aboutus', component: AboutusComponent },
     { path: 'contactus', component: ContactUsComponent },
     { path: 'services', component: ServicesComponent },
@@ -21,7 +21,9 @@ import { BrowserModule } from '@angular/platform-browser';
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', redirectTo: '/home' } 
   ];
-  
-
+  @NgModule({
+    imports:[RouterModule.forRoot(routes)],
+    exports:[RouterModule]
+  })
   export class AppRoutingModule {}
   

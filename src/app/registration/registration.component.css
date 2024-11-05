@@ -15,6 +15,7 @@ body {
     margin: 0;
 }
 
+/* Main container for the appointment section */
 .dis {
     display: flex; 
     justify-content: space-between; 
@@ -24,15 +25,17 @@ body {
     gap: 20px;
 }
 
+/* Content on the left side */
 .gan {
     width: 50%; 
     padding: 20px; 
 }
 
+/* Registration form container */
 .reg {
     margin-top: 40px;
     margin-bottom: 100px;
-    width: 40%;
+    width: 40%; /* Adjust this width to fit your design */
     padding: 20px; 
     background-color: white;
     border: 1px solid #ccc;
@@ -40,15 +43,17 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
 }
 
+/* Inner registration container styles */
 .register-container {
     width: 100%; 
 }
 
-.register-container h2 {
+.register-container h1 {
     text-align: center; 
     margin-bottom: 20px;
 }
 
+/* Styling for form fields */
 .register-container div {
     margin-bottom: 15px; 
 }
@@ -65,6 +70,7 @@ body {
     border-radius: 4px;
 }
 
+/* Button styling */
 .register-container button {
     width: 100%; 
     padding: 10px;
@@ -73,14 +79,19 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
 }
 
+/* Button hover effect */
 .register-container button:hover {
     background-color: #3b88c5;
 }
-.head{
+
+/* Header styling */
+.head {
     background-color: #f0f0f0;
     font-size: 39px;
     margin-top: 5px;
-    padding-left: 295px;
+    padding: 10px 0; /* Adjust padding for better alignment */
+    text-align: center; /* Center align the header */
 }

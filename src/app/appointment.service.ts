@@ -1,20 +1,19 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppointmentService {
-  private apiUrl = 'http://your-api-url/api/appointments'; // Replace with your actual API endpoint
+  // Base URL for your Flask API
+  private apiUrl = 'http://localhost:5000'; // Base URL
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAllPost(): Observable<any> {
-    return this.http.get("https://jsonplaceholder.typicode.com/posts");
-  }
-
+  // Method to register an appointment
   registerAppointment(data: any): Observable<any> {
-    return this.http.post(this.apiUrl, data);
+    return this.http.post("https://jsonplaceholder.typicode.com/users", data); // Send a POST request to the Flask API
   }
+
 }
