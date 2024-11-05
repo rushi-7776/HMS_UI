@@ -14,6 +14,7 @@ export class RegistrationComponent implements OnInit {
   doctor: string | null = '';
   date: string | null = '';
   time: string | null = '';
+ 
   firstName: string = '';
   lastName: string = '';
   email: string = '';

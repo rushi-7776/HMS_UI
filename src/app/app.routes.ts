@@ -9,14 +9,16 @@
   import { BrowserModule } from '@angular/platform-browser';
 
 
+
   export const routes: Routes = [
     { path: 'home', component: HomeComponent }, 
     { path: 'aboutus', component: AboutusComponent },
     { path: 'contactus', component: ContactUsComponent },
     { path: 'services', component: ServicesComponent },
     { path: 'appoitment', component: AppoitmentComponent},
-    {path: 'register', component: RegistrationComponent},
+    { path: 'register', component: RegistrationComponent},
     { path: 'register/:doctor/:date/:time', component: RegistrationComponent},
+   
     { path: '', component: HomeComponent }, 
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', redirectTo: '/home' } 
