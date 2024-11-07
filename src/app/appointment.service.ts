@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class AppointmentService {
   // Base URL for your Flask API
-  private apiUrl = 'http://127.0.0.1:5000/Appointment'; // Base URL
+  private apiUrl = 'http://127.0.0.1:5000/post_data'; // Base URL
+  private apiUrlGet = 'http://127.0.0.1:5000/get_data';
 
   constructor(private http: HttpClient) {}
 
@@ -17,6 +18,10 @@ export class AppointmentService {
  // }
   registerAppointment(data: any): Observable<any> {
     return this.http.post(this.apiUrl, data); // Send a POST request to the Flask API
+  }
+   // Method to get all appointments (GET)
+   getAppointments(): Observable<any> {
+    return this.http.get<any>(this.apiUrlGet);  // GET request for fetching 
   }
 
 }

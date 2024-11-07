@@ -7,6 +7,7 @@
   import { RegistrationComponent } from './registration/registration.component';
   import { AppoitmentComponent } from './appoitment/appoitment.component';
   import { BrowserModule } from '@angular/platform-browser';
+import { DisplayComponent } from './display/display.component';
 
 
 
@@ -18,7 +19,7 @@
     { path: 'appoitment', component: AppoitmentComponent},
     { path: 'register', component: RegistrationComponent},
     { path: 'register/:doctor/:date/:time', component: RegistrationComponent},
-   
+    { path: 'display', component: DisplayComponent},
     { path: '', component: HomeComponent }, 
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', redirectTo: '/home' } 
