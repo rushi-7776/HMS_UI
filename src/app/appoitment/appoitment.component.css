@@ -7,8 +7,8 @@
     padding: 70px;
     gap: 70px;
     display: flex;
-    max-width: 600px;
-    margin: 0 auto;
+    /* max-width: 600px; */
+    
     text-align: center;
     padding: 20px;
     font-family: Arial, sans-serif;

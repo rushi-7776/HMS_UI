@@ -1,10 +1,39 @@
 
-<div *ngIf="appointments.length > 0; else noAppointments">
-  <table id="example" class="table table-striped" style="width:100%">
+<div class=" "style="margin-top:70px; ">
+
+  <div class="container h-lg bg-light text-secendary" style=" height:50px;">
+    <h3 class="m-0 text-center p-2 "style="width:1500px; height:50px; ">Appointment List</h3>
+  </div>
+
+  <div class="d-flex justify-content-center align-items-center mb-3 mt-3 ">
+
+    <div class="d-flex" style="padding-right:300px;" >
+    <input type="text" class="form-control" placeholder="Type Here" [(ngModel)]="searchQuery" 
+        (input)="filterAppointments()"/>
+    </div>
+    
+    <div class="d-flex  ">
+      <button (click)="previousPage()" [disabled]="page === 1" class=" btn btn-secondary">Previous</button>
+      <span class="ps-3 pe-3 pt-1 text-center align-items-center">Page {{page}} of {{totalPages}}</span>
+      <button class=" btn btn-secondary" (click)="nextPage()" [disabled]="page === totalPages">Next</button>
+    </div>
+
+    <div class="d-flex  " style="padding-left:300px;">
+      <label for="itemsPerPageSelect"class="pt-1 pe-2">Items per page:</label>
+    <select id="itemsPerPageSelect" [(ngModel)]="itemsPerPage" (change)="onPageSizeChange()" class="form-select w-auto">
+      <option [value]="5">5</option>
+      <option [value]="15">15</option>
+      <option [value]="30">30</option>
+      <option [value]="50">50</option>
+    </select>
+    </div>
+  </div>
+
+  <table id="example" class="table  m-auto table-hover table-striped " style="max-width:1400px; ">
     <thead class="thead-dark">
       <tr>
-        <th>ID</th>
-        <th>First Name</th>
+        <th >ID</th> 
+        <th >First Name</th>
         <th>Last Name</th>
         <th>Email</th>
         <th>Phone No</th>
@@ -14,8 +43,9 @@
         <th>Time</th>
       </tr>
     </thead>
+
     <tbody>
-      <tr *ngFor="let appointment of appointments">
+      <tr *ngFor="let appointment of paginatedAppointments ">
         <td>{{ appointment.ID }}</td>
         <td>{{ appointment.FIRSTNAME }}</td>
         <td>{{ appointment.LASTNAME }}</td>
@@ -28,11 +58,14 @@
       </tr>
     </tbody>
   </table>
+
+  <div class="d-flex justify-content-center m-3">
+    <button (click)="previousPage()" [disabled]="page === 1" class=" btn btn-secondary">Previous</button>
+    <span class="ps-3 pe-3 pt-1">Page {{page}} of {{totalPages}}</span>
+    <button class=" btn btn-secondary" (click)="nextPage()" [disabled]="page === totalPages">Next</button>
+  </div>
 </div>
 
-<!-- Display message when no appointments are available -->
 <ng-template #noAppointments>
-  <p>No appointments available.</p>
+  <p *ngIf="filteredAppointments.length === 0">No appointments available.</p>
 </ng-template>
-
-

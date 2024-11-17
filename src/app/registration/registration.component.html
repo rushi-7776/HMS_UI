@@ -1,49 +1,64 @@
-<div class="head">
-    <h1>Appointments</h1>
-</div>
-<div class="dis">
-    <div class="gan">
-        <h1>Get Appointment Now!</h1> 
-        <p>You will be notified via email soon. The customer is very important, 
-            the customer will be followed by the customer.</p>
-        <p>I am a text block. Click the edit button to change this text. 
-            The customer is very important, the customer will be followed by the customer. 
-            As the land of the land, the mourning nor the corporal of the land, 
-            the pillow of the lion.</p>
-        <div class="appoit">
-            <img src="appoitment.jpeg" alt="1" style="width: 100%; height: auto; border-radius: 5px;">
+<div class="container-fluid" style="margin-top:62px">
+    <div class="row">
+        <div class="col-xxl-6 col-xl-12 text-center p-5 order-2 order-xxl-1">
+          <h1 class="">Get Appointment Now!</h1>
+          <p class="">You will be notified via email soon.<br> </p>
+          <img src="get_appo_img.jpg" alt="sister_img"class="" style="height:auto; width:auto">
         </div>
-    </div>
-    <div class="reg">
-        <div class="register-container">
-            <h1>Register Appointment</h1>
+
+        <div class="col-xxl-6 col-xl-12 p-5 order-1 order-xxl-2">
+            <div class="">
+            <div class="">
+            <h1>Book Appointment</h1>
             <h3>Appointment of {{ doctor }}</h3>
             <p><strong>Date:</strong> {{ date }}</p>
             <p><strong>Time:</strong> {{ time }}</p>
-            <form>  
-                    
-                <div>
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName" required>
+            <form #appointmentForm="ngForm" (ngSubmit)="register()">  
+                <h6>Enter Patient Valid Information</h6>
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" class="form-control " (keyup)="validate_firstname()" [(ngModel)]="firstName" required #firstNameInput="ngModel"/>
+                    <div *ngIf="firstName_error.length" class="text-danger">
+                        {{firstName_error}}
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" class="form-control" (keyup)="validate_lastname()" [(ngModel)]="lastName" required #lastNameInput="ngModel"/>
+                    <div *ngIf="lastName_error.length " class="text-danger">
+                       {{lastName_error}}
+                    </div>
+                </div>
+                <div class="mb-3" >
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" (keyup)= "validate_email()" [(ngModel)]="email" required #emailInput="ngModel"/>
+                    <div *ngIf="email_error.length " class="text-danger">
+                       {{email_error}}
+                    </div>
                 </div>
                 <div>
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName" required>
+                    <label for="phoneNo" class="form-label">Phone No:</label>
+                    <input type="text" id="phoneNo" name="phoneNo" class=" form-control" (keyup)="validate_phoneno()" [(ngModel)]="phoneNo" required #phoneNoInput="ngModel"/>
+                    <div *ngIf="phoneno_error.length" class="text-danger">
+                        {{phoneno_error}}
+                    </div>
                 </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" [(ngModel)]="email" required>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address:</label>
+                    <input type="text" id="address" name="address" class="form-control" (keyup)="validate_address()" [(ngModel)]="address" required #addressInput="ngModel"/>
+                    <div *ngIf="address_error.length" class="text-danger">
+                        {{address_error}}
+                    </div>
+                </div> 
+    
+                <div class="">
+                  <button  type="submit"(click)=" on_submit_button_click()" class="btn btn-primary" >Register</button>
                 </div>
-                <div>
-                    <label for="PhoneNo">Phone No:</label>
-                    <input type="text" id="PhoneNo" name="PhoneNo" [(ngModel)]="PhoneNo" required>
-                </div>
-                <div>
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" [(ngModel)]="address" required>
-                </div>         
-                <button (click)="register()" type="button">Register</button>
             </form>
+            </div>
+            </div>
+            
+
         </div>
     </div>
 </div>
