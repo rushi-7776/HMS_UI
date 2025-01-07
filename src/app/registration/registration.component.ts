@@ -63,7 +63,7 @@ export class RegistrationComponent implements OnInit {
       (response: any) => {
         console.log('Registration successful:', response);
         alert(`Appointment registered with ${this.doctor} on ${this.date} at ${this.time}`);
-
+        this.clearForm();
       },
       (error: any) => {
         console.error('Error registering appointment:', error);
@@ -184,7 +184,21 @@ export class RegistrationComponent implements OnInit {
       alert('all condition not pass')
     }
   }
+  clearForm(): void {
+    this.firstName = '';
+    this.lastName = '';
+    this.email = '';
+    this.phoneNo = '';
+    this.address = '';
+    this.formSubmitted = false;
 
+    // Reset error messages
+    this.firstName_error = '';
+    this.lastName_error = '';
+    this.email_error = '';
+    this.phoneno_error = '';
+    this.address_error = '';
+  }
 
   private isFormValid(): boolean {
     return !!(this.firstName && this.lastName && this.email && this.phoneNo && this.address);
