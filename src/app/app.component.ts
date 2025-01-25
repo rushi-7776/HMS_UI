@@ -15,10 +15,8 @@ export class AppComponent implements OnInit {
   title = 'angular-inject';
   users = [];
 
-  constructor() {
+  constructor() {}
 
-  }
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
+  
 }

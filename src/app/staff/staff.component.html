@@ -1,0 +1,85 @@
+<app-add-staff></app-add-staff>
+<!-- <div style="margin-top:70px"></div> -->
+<h4 class="justify-content-center" style="text-align:center">All Staff List</h4>
+
+<table id="example" class="table border-1 m-auto table-hover table-striped " style="max-width:1300px; border: 1px solid gray;">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th> 
+        <th>Name</th>
+        <th>Mobile No</th>
+        <th>Date Of Join</th>
+        <!-- <th>Today's Date</th> -->
+        <th>Position</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let staff of staffs ">
+        <td>{{staff.ID}}</td>
+        <td>{{staff.NAME }}</td>
+        <td>{{staff.MOBILE }}</td>
+        <td>{{staff.DATES }}</td>
+        <!-- <td>{{staff.TODAYDATE }}</td> -->
+        <td>{{staff.POSITION  }}</td>
+    
+      </tr>
+    </tbody>
+  </table>
+
+<app-daily-staff></app-daily-staff>
+
+
+
+    <!-- <div class="card text-white bg-success" data-bs-toggle="modal" data-bs-target="#staffModal">
+        <div class="card-body">
+            <h5 class="card-title">Available Staff</h5>
+            <p class="card-text display-4">8/10</p>
+        </div>
+    </div>
+
+<div class="modal fade" id="staffModal" tabindex="-1" aria-labelledby="staffModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="staffModalLabel">Available Staff</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-primary mb-3"><i class="fa-solid fa-mars me-2"></i>Male Staff</h5>
+                    <ul class="list-group mb-4">
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fa-solid fa-user me-3 text-primary"></i> Arjun Mehta
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fa-solid fa-user me-3 text-primary"></i> Rohan Gupta
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fa-solid fa-user me-3 text-primary"></i> Suresh Iyer
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fa-solid fa-user me-3 text-primary"></i> Vikram Patel
+                        </li>
+                    </ul>
+                <h5 class="text-danger mb-3"><i class="fa-solid fa-venus me-2"></i>Female Staff</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fa-solid fa-user me-3 text-danger"></i> Priya Sharma
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fa-solid fa-user me-3 text-danger"></i> Kavita Nair
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fa-solid fa-user me-3 text-danger"></i> Ananya Roy
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fa-solid fa-user me-3 text-danger"></i> Meera Das
+                        </li>
+                    </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> -->

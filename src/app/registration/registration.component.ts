@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppointmentService } from '../appointment.service';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-declare var $ : any;
 
 @Component({
   selector: 'app-registration',
@@ -14,8 +13,8 @@ declare var $ : any;
 })
 export class RegistrationComponent implements OnInit {
   doctor: string | null = '';
-  date: string | null = '';
-  time: string | null = '';
+  dates: string | null = '';
+  appointment_time: string | null = '';
   firstName: string = '';
   lastName: string = '';
   email: string = '';
@@ -29,15 +28,14 @@ export class RegistrationComponent implements OnInit {
   address_error : string= '';
   appointments :any[] = [];
 
-  constructor(private route: ActivatedRoute, private appointmentService: AppointmentService) {}
+  constructor(private route: ActivatedRoute, private appointmentService: AppointmentService,private router:Router) {}
   
 
  
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.doctor = params.get('doctor') || '';
-      this.date = params.get('date') || '';
-      this.time = params.get('time') || '';
+      this.appointment_time = params.get('time') || '';
     });
   }
 
@@ -50,8 +48,8 @@ export class RegistrationComponent implements OnInit {
 
     const registrationData = {
       doctor: this.doctor,
-      date: this.date,
-      time: this.time,
+      dates: this.dates,
+      time: this.appointment_time,
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
@@ -62,8 +60,9 @@ export class RegistrationComponent implements OnInit {
     this.appointmentService.registerAppointment(registrationData).subscribe(
       (response: any) => {
         console.log('Registration successful:', response);
-        alert(`Appointment registered with ${this.doctor} on ${this.date} at ${this.time}`);
+        alert(`Appointment registered with ${this.doctor} on ${this.dates} at ${this.appointment_time}`);
         this.clearForm();
+        this.router.navigate(['/home']);
       },
       (error: any) => {
         console.error('Error registering appointment:', error);
@@ -177,8 +176,9 @@ export class RegistrationComponent implements OnInit {
     var isvalidateemail = this.validate_email();
     var isvalidatephoneno = this.validate_phoneno();
     var isvalidateaddress = this.validate_address();
+    this.dates;
    
-    if( isvalidatefirstname && isvalidatelastname && isvalidateemail && isvalidatephoneno && isvalidateaddress){
+    if( isvalidatefirstname && isvalidatelastname && isvalidateemail && isvalidatephoneno && isvalidateaddress && this.dates){
          alert('all conditions pass')
     }else{
       alert('all condition not pass')
@@ -190,6 +190,7 @@ export class RegistrationComponent implements OnInit {
     this.email = '';
     this.phoneNo = '';
     this.address = '';
+    this.dates = '';
     this.formSubmitted = false;
 
     // Reset error messages
@@ -201,6 +202,6 @@ export class RegistrationComponent implements OnInit {
   }
 
   private isFormValid(): boolean {
-    return !!(this.firstName && this.lastName && this.email && this.phoneNo && this.address);
+    return !!(this.firstName && this.lastName && this.email && this.phoneNo && this.address && this.dates);
   }
 }

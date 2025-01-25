@@ -1,0 +1,37 @@
+<div style="margin-top:70px"></div>
+
+
+<div class="mt-3" data-bs-toggle="modal" data-bs-target="#addStaffModal"style="float:right; margin-right:110px;">
+    <button type="button" class="btn btn-primary">Add Staff Here</button>
+</div><br><br>
+
+<div class="modal fade" id="addStaffModal" tabindex="-1" aria-labelledby="addstaffModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content w-50">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title " id="addstaffModalLabel" style="text-align:center">Add Staff Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="add_staff()" >
+                    <label for="name" class="form-label ps-2 m-0 ">Staff Name:</label>
+                    <input type="text" id="name" name="name" class="form-control mb-2" [(ngModel)]="name" placeholder="Enter Staff Name">
+                    <label for="mobile" class="form-label ps-2 m-0">Mobile No:</label>
+                    <input type="text" id="mobile" name="mobile" class="form-control mb-2" [(ngModel)]="mobile" placeholder="Enter Staff Mobile No">
+                    <label for="date" class="form-label ps-2 m-0">Date Of Join:</label>
+                    <input type="date" id="date" name="date" class="form-control mb-2" [(ngModel)]="date">
+                    <label for="todayDate" class="form-label ps-2 m-0">Today's Date:</label>
+                    <input type="date" id="todayDate" name="todayDate" class="form-control mb-2" [(ngModel)]="todayDate">
+                    <label for="position" class="form-label ps-2 m-0">Position:</label>
+                    <input type="text" id="position" name="position" class="form-control mb-2" [(ngModel)]="position" placeholder="Enter Staff Work Position">
+                <div class="d-flex  align-items-center" style="justify-content:space-evenly">
+                    <button type="submit" class="btn btn-primary" >Add-Staff</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </form>
+            
+                  
+            </div>
+        </div>
+    </div>
+</div>

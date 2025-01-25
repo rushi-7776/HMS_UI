@@ -1,0 +1,30 @@
+<div style="margin-top:70px">
+<div class="d-flex justify-content-center align-items-center" style="height: 90vh; background-color: #f7f7f7;">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 350px;">
+<h4 class="text-center text-primary mb-4">Add Visitor Here</h4>
+<form (ngSubmit)="visitors()">
+    <div class="mb-3">
+    <label  class="form-label ps-2">Visitor Name:</label>
+    <input type="text"name="Name"placeholder="Enter Visitor Name"[(ngModel)]="Name" class="form-control">
+</div>
+<div class="mb-3">
+    <label class="form-label ps-2">Date:</label>
+    <input type="date"name="date"[(ngModel)]="Date" class="form-control">
+</div>
+<div class="mb-3">
+    <label class="form-label ps-2">Time:</label>
+    <input type="time"name="time"[(ngModel)]="Time" class="form-control">
+</div>
+<div class="mb-3">
+    <label class="form-label ps-2">Status:</label>
+    <input type="text"name="Status" placeholder="Confirm/Cancelled"[(ngModel)]="Status" class="form-control">
+</div>
+<div>
+    <button type="submit" class="btn btn-primary " style="width:100px; margin-left:80px">Add</button>
+    <!-- <button type="reset" class="btn btn-danger ms-5 ">Reset</button> -->
+
+</div>
+</form>
+</div>
+</div>
+</div>

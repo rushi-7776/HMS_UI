@@ -11,10 +11,17 @@
             <div class="">
             <h1>Book Appointment</h1>
             <h3>Appointment of {{ doctor }}</h3>
-            <p><strong>Date:</strong> {{ date }}</p>
-            <p><strong>Time:</strong> {{ time }}</p>
+            <!-- <p><strong>Date:</strong> {{ dates }}</p> -->
+            <p><strong>Time:</strong> {{ appointment_time }}</p>
             <form #appointmentForm="ngForm" (ngSubmit)="register()">  
                 <h6>Enter Patient Valid Information</h6>
+                <div class="mb-3">
+                    <label for="dates" class="form-label">Date:</label>
+                    <input type="date" id="dates" name="dates" class="form-control " [(ngModel)]="dates"/>
+                    <!-- <div *ngIf="firstName_error.length" class="text-danger">
+                        {{firstName_error}}
+                    </div> -->
+                </div>
                 <div class="mb-3">
                     <label for="firstName" class="form-label">First Name:</label>
                     <input type="text" id="firstName" name="firstName" class="form-control " (keyup)="validate_firstname()" [(ngModel)]="firstName" required #firstNameInput="ngModel"/>

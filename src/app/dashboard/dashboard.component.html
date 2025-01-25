@@ -1,0 +1,247 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h4 class="text-center py-3 "><i class="fa-sharp fa-solid fa-hospital"></i> Doctor Panel</h4>
+        <a routerLink="dashboard" class="active ps-4"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="display"><i class="fas fa-user"></i> Appointments </a>
+        <a href="appoitment"><i class="fas fa-calendar-check"></i> Patient Register</a>
+        <a href="doctors"><i class="fa-solid fa-user-doctor"></i> Doctors</a>
+        <a href="staff"><i class="fas fa-users"></i> Staff</a>
+        <a href="#"><i class="fas fa-list"></i> OPD</a>
+    </div>
+
+    <div class="content">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>Welcome, Dr. Smith</h2>
+        <h5 id="today-date"><i class="fa-solid fa-calendar-days"></i> Date: {{ todayDate }}
+        <button class="ms-3 btn btn-danger " (click)="logout()">Logout</button></h5>
+    </div><br>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary" data-bs-toggle="modal" data-bs-target="#appointmentsModal">
+                <div class="card-body">
+                    <h5 class="card-title">Today's Appointments</h5>
+                    <p class="card-text display-4">{{patients.length}}</p>
+                </div>
+            </div>
+        </div>
+            
+        <div class="modal fade" id="appointmentsModal" tabindex="-1" aria-labelledby="appointmentsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                       
+                            
+                        <h4 class="modal-title" id="appointmentsModalLabel">Today's Appointments</h4>
+                        <h6 class="m-0"><i class="fa-solid fa-calendar-days ps-5 m-0"></i> Date: {{ todayDate }}</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        
+                    </div>
+                    <div class="modal-body">
+                    <table id="example" class="table border-1 m-auto table-hover table-striped " style="max-width:1400px; border: 1px solid gray;">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th>ID</th> 
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Mobile No</th>
+                            <th>Doctor</th>
+                            <th>Appointment Time</th>
+        
+                          </tr>
+                        </thead>
+                    
+                        <tbody>
+                        <tr *ngFor="let patient of patients ">
+                            <td>{{patient.ID}}</td>
+                            <td>{{patient.FIRSTNAME }}</td>
+                            <td>{{patient.LASTNAME }}</td>
+                            <td>{{patient.PHONENO }}</td>
+                            <td>{{patient.DOCTOR}}</td>
+                            <td>{{patient.APPOINTMENT_TIME }}</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-3"><app-staff></app-staff></div> -->
+        <div class="col-md-3">
+            <div class="card text-white bg-success" data-bs-toggle="modal" data-bs-target="#staffModal">
+                <div class="card-body">
+                    <h5 class="card-title">Available Staff</h5>
+                    <p class="card-text display-4">{{ daily_staffs.length }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="staffModal" tabindex="-1" aria-labelledby="staffModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h4 class="modal-title" id="appointmentsModalLabel">Available Staff</h4>
+                        <h6 class="m-0"><i class="fa-solid fa-calendar-days ps-5 m-0"></i> Date: {{ todayDate }}</h6>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        
+                    </div>
+                    <div class="modal-body">
+                    <table id="example" class="table  m-auto table-hover table-striped " style="max-width:1400px; border: 1px solid gray;">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th>ID</th> 
+                            <th>Name</th>
+                            <th>Mobile No</th>
+                            <th>Position</th>
+                            <!-- <th>Check In</th> -->
+                          </tr>
+                        </thead>
+                    
+                        <tbody>
+                          <tr *ngFor="let daily_staff of daily_staffs ">
+                            <td>{{daily_staff.ID}}</td>
+                            <td>{{daily_staff.NAME }}</td>
+                            <td>{{daily_staff.MOBILE }}</td>
+                            <td>{{daily_staff.POSITION }}</td>
+                            <!-- <td>{{daily_staff.CHECK_IN }}</td> -->
+                            
+
+                          </tr>
+                          <ng-template #noAppointments>
+                            <p *ngIf="fetchStaff.length === 0">No appointments available.</p>
+                          </ng-template>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <div class="col-md-3">
+            <div class="card text-white bg-warning" data-bs-toggle="modal" data-bs-target="#operationsModal">
+                <div class="card-body">
+                    <h5 class="card-title">Operations Scheduled</h5>
+                    <p class="card-text display-4">5</p>
+                </div>
+            </div>
+        </div>
+    <div class="modal fade" id="operationsModal" tabindex="-1" aria-labelledby="operationsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-warning text-white">
+                    <h5 class="modal-title" id="operationsModalLabel">Scheduled Operations</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                            <th>#</th>
+                            <th>Patient Name</th>
+                            <th>Operation Type</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>Appendectomy</td>
+                            <td>Jan 13, 2025</td>
+                            <td>10:00 AM</td>
+                            <td><span class="badge bg-success">Confirmed</span></td>
+                            </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jane Smith</td>
+                            <td>Gallbladder Surgery</td>
+                            <td>Jan 13, 2025</td>
+                            <td>11:30 AM</td>
+                            <td><span class="badge bg-warning">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Michael Lee</td>
+                            <td>Hip Replacement</td>
+                            <td>Jan 13, 2025</td>
+                            <td>01:00 PM</td>
+                            <td><span class="badge bg-danger">Cancelled</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Emily Brown</td>
+                            <td>Knee Surgery</td>
+                            <td>Jan 13, 2025</td>
+                            <td>02:30 PM</td>
+                            <td><span class="badge bg-success">Confirmed</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>David Wilson</td>
+                            <td>Heart Bypass</td>
+                            <td>Jan 13, 2025</td>
+                            <td>04:00 PM</td>
+                            <td><span class="badge bg-success">Confirmed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div class="col-md-3">
+                <div class="card text-white bg-danger" data-bs-toggle="modal" data-bs-target="#emergencyModal">
+                    <div class="card-body">
+                        <h5 class="card-title">Emergency Alerts</h5>
+                        <p class="card-text display-4">3</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="modal fade" id="emergencyModal" tabindex="-1" aria-labelledby="emergencyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="emergencyModalLabel">Emergency Alerts</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fa-solid fa-fire-extinguisher me-3 text-danger"></i>
+                            Oxygen Cylinder is running low!
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fa-solid fa-heart-pulse me-3 text-warning"></i>
+                            Heart Monitor needs maintenance!
+                        </li>
+                        <li class="list-group-item d-flex align-items-center">
+                            <i class="fa-solid fa-thermometer-half me-3 text-primary"></i>
+                            Temperature Control malfunction detected!
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <app-visitors></app-visitors>
+    </div>
+</body>

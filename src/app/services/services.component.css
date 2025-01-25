@@ -1,4 +1,4 @@
-.img{
+/* .img{
     padding-left: 100px;
     height: 400px;
     display: flex;
@@ -46,6 +46,6 @@
 }
 .meditation-icon {
     font-size: 24px; /* Adjust the size as needed */
-    margin-right: 8px; /* Space between the icon and the text */
-    color: #ff4081; /* Change color to your preferred color */
-}
+    /* margin-right: 8px; /* Space between the icon and the text */
+    /* color: #ff4081; Change color to your preferred color */
+/* } */ 

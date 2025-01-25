@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh; background-color: #f7f7f7;">
+  <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
+    <h2 class="text-center text-primary mb-4">Doctor Login</h2>
+    <form (ngSubmit)="onLogin()">
+      <div class="mb-3">
+        <label for="username" class="form-label ps-2">Username:</label>
+        <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" placeholder="Enter Username" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label ps-2">Password:</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Enter Password" required>
+      </div>
+      <div *ngIf="errorMessage" class="alert alert-danger mb-3">
+        {{ errorMessage }}
+      </div>
+      <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+    </form>
+    <div class="text-center">
+      <button routerLink="/registerdoc" class="btn btn-link">Don't have an account? Register</button>
+    </div>
+  </div>
+</div>

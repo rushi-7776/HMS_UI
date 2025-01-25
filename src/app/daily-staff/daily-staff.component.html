@@ -1,0 +1,29 @@
+<div class="mt-3" data-bs-toggle="modal" data-bs-target="#dailyStaffModal"style="float:right; margin-right:110px;">
+    <button type="button" class="btn btn-primary">Add Attendence</button>
+</div><br><br><br>
+
+<div class="modal fade" id="dailyStaffModal" tabindex="-1" aria-labelledby="dailystaffModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content w-50">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title " id="dailystaffModalLabel" style="text-align:center">Add Staff Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="daily_staff()" >
+                    <label for="id" class="form-label ps-2 m-0 ">Staff Id:</label>
+                    <input type="text" id="id" name="id" class="form-control mb-2" [(ngModel)]="id" placeholder="Enter Staff Id">
+                    <label for="check_in" class="form-label ps-2 m-0">Today's Date:</label>
+                    <input type="date" id="check_in" name="check_in" class="form-control mb-2" [(ngModel)]="check_in" placeholder="Enter Today's Date">
+                   
+                <div class="d-flex  align-items-center" style="justify-content:space-evenly">
+                    <button type="submit" class="btn btn-primary" >Attend-Staff</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </form>
+            
+                  
+            </div>
+        </div>
+    </div>
+</div>

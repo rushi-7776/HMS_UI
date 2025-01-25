@@ -9,9 +9,16 @@
   import { AboutComponent } from './aboutus/aboutus.component';
   import { HeaderComponent } from './header/header.component';
   import { FooterComponent } from './footer/footer.component';
-
-
-
+  import { DashboardComponent } from './dashboard/dashboard.component';
+  import { LoginComponent } from './login/login.component';
+  import { RegisterComponent } from './register/register.component';
+  import { DoctorsComponent } from './doctors/doctors.component';
+  import { VisitorsComponent } from './visitors/visitors.component';
+  import { AddVisitorsComponent } from './add-visitors/add-visitors.component';
+  import { StaffComponent } from './staff/staff.component';
+import { AddStaffComponent } from './add-staff/add-staff.component';
+import { DailyStaffComponent } from './daily-staff/daily-staff.component';
+  
 
   export const routes: Routes = [
     { path: 'home', component: HomeComponent }, 
@@ -22,9 +29,17 @@
     { path: 'services', component: ServicesComponent },
     { path: 'appoitment', component: AppoitmentComponent},
     { path: 'register', component: RegistrationComponent},
-    { path: 'register/:doctor/:date/:time', component: RegistrationComponent},
+    { path: 'register/:doctor/:time', component: RegistrationComponent},
     { path: 'display', component: DisplayComponent},
-  
+    {path: 'dashboard', component: DashboardComponent},
+    { path: 'login', component: LoginComponent },
+    { path: 'registerdoc', component: RegisterComponent },
+    { path: 'doctors', component:DoctorsComponent },
+    { path: 'visitors', component:VisitorsComponent },
+    { path: 'add-visitors', component:AddVisitorsComponent },
+    { path: 'staff', component: StaffComponent},
+    { path: 'add-staff', component: AddStaffComponent},
+    { path: 'daily-staff', component: DailyStaffComponent},
     { path: '', component: HomeComponent }, 
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', redirectTo: '/home' } 

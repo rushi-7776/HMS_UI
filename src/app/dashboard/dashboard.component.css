@@ -1,0 +1,46 @@
+body {
+    background-color: #f8f9fa;
+    margin-top: 62px;
+}
+.sidebar {
+    height: 643px;
+    width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    position: relative;
+}
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 15px 15px 15px 25px;
+    
+}
+.sidebar a:hover {
+    background-color: #495057;
+}
+.sidebar a.active {
+    color: white;
+    background-color: #007bff;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    margin-top: -643px; /* Same height as sidebar */  
+}
+.card {
+    margin-bottom: 20px;
+}
+
+
+.list-group-item {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px;
+}
+.list-group-item i {
+    font-size: 1.5rem;
+}
