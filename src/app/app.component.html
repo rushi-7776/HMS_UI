@@ -1,7 +1,106 @@
-<table style="width: 100%;">
-    <tr>
-        <td>
-            <app-add-appoitment></app-add-appoitment>
-        </td>
-    </tr>
-</table>
+<header class="bg-light py-3">
+  <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between align-items-center">
+          <!-- Brand Logo -->
+          <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+              <img src="logoo.jpeg" alt="Logo" class="logo" style="max-width: 150px; background-color: transparent;">
+              <h2 class="doctorn mb-0">Doctoral</h2>
+          </a>
+
+          <!-- Navbar Toggler for Mobile View -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Collapsible Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto gap-3">
+                  <li class="nav-item">
+                      <a routerLink="/home" class="nav-link text-dark fs-5">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/aboutus" class="nav-link text-dark fs-5">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/services" class="nav-link text-dark fs-5">Services</a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/contactus" class="nav-link text-dark fs-5">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/doctor-login" class="nav-link text-dark fs-5">Doctors</a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/appoitment-list" class="nav-link text-dark fs-5">Appointments</a>
+                  </li>
+                  <!-- Make Appointment Button (visible in the collapsible navbar) -->
+                  <li class="nav-item">
+                      <a routerLink="/appoitment" class="btn btn-primary ms-2">Make Appointment</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+  </div>
+</header>
+
+<div class="container" style="margin-top: 82px; max-width: fit-content; padding: 0px; margin: 0px;">
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="footer bg-dark text-white py-4">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start">
+    <!-- Footer Logo and Title -->
+    <div class="d-flex flex-column align-items-start gap-2 mb-3 mb-md-0">
+      <div class="d-flex align-items-center gap-2">
+        <img src="logoo.jpeg" alt="Logo" class="logo" style="max-width: 150px; background-color: transparent;">
+        <h2 class="doctorn mb-0">Doctoral</h2>
+      </div>
+      <div>
+        <p style="max-width: 300px; line-height: 1.5;">I am a text block. Click the edit button to change this text...</p>
+      </div>
+    </div>
+
+    <!-- Footer Content Sections -->
+    <div class="d-flex flex-wrap gap-4">
+      <div class="col-md-4  col-xs-6">
+        <div class="widget d-grid">
+          <h3 class="widget-title fs-4 mb-3">Our Services</h3>
+          <ul class="menu list-unstyled">
+            <li class="menu-item mb-2 pb-2 border-bottom">
+              <span class="fix-size text-white" >Bills & Insurance</span>
+            </li>
+            <li class="menu-item mb-2 pb-2 border-bottom">
+              <span class="fix-size text-white">Cancer Screening</span>
+            </li>
+            <li class="menu-item mb-2 pb-2 border-bottom">
+              <span class="fix-size text-white">Cardiac Surgery</span>
+            </li>
+            <li class="menu-item">
+              <span class= "fix-size text-white">Neurology</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md- col-sm-3 col-xs-6">
+        <div class="widget d-grid">
+          <h3 class="widget-title fs-4 mb-3">Specialist Doctors</h3>
+          <ul class="menu list-unstyled">
+            <li class="menu-item mb-2 pb-2 border-bottom">
+              <span class=" fix-size text-white">Dr. Larry Schmidt</span>
+            </li>
+            <li class="menu-item mb-2 pb-2 border-bottom">
+              <span class="fix-size text-white">Dr. Roger Schneider</span>
+            </li>
+            <li class="menu-item mb-2 pb-2 border-bottom">
+              <span class="fix-size text-white">Dr. Theresa Hamilton</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h3 class="fs-4">The Heart Of Clinic</h3>
+      </div>
+    </div>
+  </div>
+</footer>

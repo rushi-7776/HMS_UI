@@ -1,0 +1,72 @@
+ 
+.container {
+    /* display: flex;  */
+    align-items: center; 
+    gap: 8.5rem ;
+}
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden; 
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: white;
+}
+.py-3 {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+}
+.footer{
+    background-color: #333;
+    display: flex;
+}
+.logo {
+    max-height: 55px; 
+    max-width: 100%; 
+    padding-left: 70px;
+
+}
+
+.items {
+    display: flex; 
+    align-items: center; 
+    padding-left: 120px;
+    font-size: 27px;
+    flex-grow: 1;
+}
+
+.items a {
+    margin: 0 10px;
+    text-decoration: none; 
+    color: #000;
+}
+
+.doctorn {
+    color: blue;
+    font-size: 24px; 
+    margin-left: 10px; 
+}
+#footrid{
+    flex-shrink: 0;
+
+}
+
+.btn-primary{
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 27px;
+    background-color: rgb(12, 131, 243);
+    color: white;
+}
+.specialist-doctors {
+    white-space: nowrap; 
+  }
+   
+.fix-size{
+    font-size: 12px !important;
+}
