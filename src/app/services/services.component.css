@@ -1,0 +1,56 @@
+.img{
+    padding-left: 100px;
+    height: 400px;
+    display: flex;
+    margin-bottom: 200px;
+
+}
+.se{
+    padding-left: 100px;
+    font-size: 30px;
+    background-color: lightgray;
+    margin:80px;
+    padding-top: 26px;
+    padding-bottom: 24px;
+    
+}
+.head{
+    padding-left: 206px;
+    font-size: 16px;
+}
+#para{
+    padding-left: 209px;
+    font-size: 12px;
+    color: #8c8c8c;
+    font-style: italic;
+}
+#headname{
+    padding-left: 254px;
+    margin-top: 22px;
+    font-size: 13px;
+
+}
+#headinfo{
+    padding-left: 257px;
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: 1px;
+    padding-right: 102px;       
+    position: relative;
+}
+#headinfo::after {
+    content: ""; 
+    display: block;
+    width: 57%; 
+    height: 2px; 
+    background-color: black; 
+    position: absolute;
+    bottom: 0;
+    bottom: -19px;
+    background-color: lightgray;
+}
+.meditation-icon {
+    font-size: 24px; /* Adjust the size as needed */
+    margin-right: 8px; /* Space between the icon and the text */
+    color: #ff4081; /* Change color to your preferred color */
+}

@@ -1,0 +1,123 @@
+/* .header{
+    margin-top: 151px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+} */
+.hed{
+    display: flex ;
+    gap: 57px;
+    }
+#top{
+    margin-top: -306px;
+    padding-left: 594px;
+}
+#name{
+    margin-left: 1012px;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    /* Removed fixed position for scrolling */
+    position: relative;
+    margin-top: 113px;
+    /* Adds spacing from the top */
+    height: 450px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px; /* Reduced padding for compact height */
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+}
+
+/* Sidebar heading */
+.sidebar h4 {
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    background-color: #495057; 
+    font-size: 18px;
+}
+
+#today-date {
+    font-size: 21px;
+    color: #000000;
+    margin-top: 5px;
+    text-align: right; 
+}
+/* Styling for the three blocks */
+.info-blocks {
+    display: flex; 
+    justify-content: space-between; 
+    margin-top: -149px;
+    margin-bottom: 79px;
+
+}
+
+.info-block {
+    background-color: rgba(0, 0, 255, 0.616); 
+    padding: 20px;
+    width: 30%; 
+    border-radius: 8px; 
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.info-block h3 {
+    font-size: 1.5rem;
+    color: #343a40; 
+}
+
+.info-block p {
+    font-size: 1rem;
+    color: #6c757d; 
+}
+
+/* Ensure the layout is responsive */
+@media (max-width: 768px) {
+    .info-blocks {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .info-block {
+        width: 80%; 
+        margin-bottom: 20px; 
+    }
+}
+.content {
+    margin-left: 253px;
+    padding: 20px;
+    margin-top: -497px;
+    width: 1056px;
+
+}
+.card {
+    margin-bottom: 20px;
+}
+.modal-header{
+    background-color: green;
+}
+.list-group-item {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px;
+}
+.list-group-item i {
+    font-size: 1.5rem;
+}
+.sidebar a.active{
+    color: white;
+    background-color: #007bff;
+    border-radius: 5px;
+    padding:5px 10px;
+}

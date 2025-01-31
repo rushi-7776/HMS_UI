@@ -1,0 +1,33 @@
+.main{
+    display: flex;
+}
+.hed{
+    font-size: 30px;
+    padding: 44px;
+    background-color: #f7f6f6;
+    margin: 0px;
+    padding-top: 26px;
+    padding-bottom: 24px;
+}
+.contact{
+    margin-top: 100px;
+    margin-left: 126px;
+}
+h2{
+    font-size: 37px;
+}
+p{
+    color: #b0abab;
+}
+.contact2{
+    margin-top: 115px;
+    padding-left: 115px;
+}
+input{
+    padding-block:20px;
+    padding-inline: 110px;
+    margin-top: 10px;
+    margin-bottom: 31px;
+    margin: 20px;
+    width: 159px;
+}

@@ -1,0 +1,72 @@
+<div class="head">
+    <h1>Appointments</h1>
+</div>
+<div class="dis">
+    <div class="gan">
+        <h1>Get Appointment Now!</h1> 
+        <p>You will be notified via email soon. The customer is very important, 
+            the customer will be followed by the customer.</p>
+        <p>I am a text block. Click the edit button to change this text. 
+            The customer is very important, the customer will be followed by the customer. 
+            As the land of the land, the mourning nor the corporal of the land, 
+            the pillow of the lion.</p>
+        <div class="appoit">
+            <img src="appoitment.jpg" alt="1" style="width: 50%; height: auto; border-radius: 5px;">
+        </div>
+    </div>
+    <div class="reg">
+        <div class="register-container ">
+            <h1>Register Appointment</h1>
+            <h3>Appointment of {{ doctor }}</h3>
+            <p><strong>Date:</strong> {{ date }}</p>
+            <p><strong>Time:</strong> {{ time }}</p>
+            <!-- <form  #registrationForm="ngForm"> -->
+                <div>
+                  <label for="firstName">First Name:</label><br>
+                  <input type="text" id="firstName" name="firstName" (keyup)="validat_firstname()"   [(ngModel)]="firstname" #firstNameInput="ngModel" required>
+                  <div *ngIf="firstName_error.length > 0" class="text-danger">
+                    {{firstName_error}}
+                  </div>
+                </div>
+              
+                <div>
+                  <label for="lastName">Last Name:</label><br>
+                  <input type="text" id="lastName" name="lastName" (keyup)="validat_lastname()" [(ngModel)]="lastname" #lastNameInput="ngModel" required>
+                  <div *ngIf="lastName_error.length > 0"  class="text-danger">
+                    {{lastName_error}}
+                  </div>
+                </div>
+                <div>
+                  <label for="date">Date :</label><br>
+                  <input type="date" id="date" name="date" (keyup)="validat_firstname()"   [(ngModel)]="date"  required>
+                  <div *ngIf="firstName_error.length > 0" class="text-danger">
+                    {{firstName_error}}
+                  </div>
+                </div>
+                <div>
+                  <label for="email">Email:</label><br>
+                  <input type="email" id="email" name="email"(keyup)="validat_email()" [(ngModel)]="email" #emailInput="ngModel" required>
+                  <div *ngIf="email_error.length" class="text-danger">
+                    {{email_error}}
+                  </div>
+                </div>
+              
+                <div>
+                  <label for="phoneno">Phone No:</label><br>
+                  <input type="text" id="phoneno" name="phoneno" (keyup)="validat_phoneno()" [(ngModel)]="phoneno" #phonenoInput="ngModel" required>
+                  <div *ngIf="phoneno_error" class="text-danger">
+                    {{phoneno_error}}
+                  </div>
+                </div>
+              
+                <div>
+                  <label for="address">Address:</label><br>
+                  <input type="text" id="address" name="address" (keyup)="validat_address()" [(ngModel)]="address" #addressInput="ngModel" required>
+                  <div *ngIf="address_error" class="text-danger">
+                    {{address_error}}
+                  </div>
+                </div><br>
+              
+                <button type="submit" (click)="on_submit_button_click()"  class="btn btn-primary">Register</button>
+              <!-- </form>                                -->
+</div>

@@ -1,0 +1,20 @@
+<div style=" margin-top: 131px;">
+    <h2>Register
+        
+    </h2>
+    <form (ngSubmit)="register()">
+      <label for="email">email</label>
+      <input id="email" [(ngModel)]="email" autocomplete="email" name="email" type="text" required /><br>
+  
+      <label for="password">Password</label>
+      <input id="password" [(ngModel)]="password" autocomplete="password" name="password" type="password" required />
+    
+        <label for="role">Role:</label>
+        <select id="role" [(ngModel)]="role" name="role" required>
+          <option value="admin">Admin</option>
+          <option value="user">User</option>
+        </select>
+      
+      <button type="submit">Register</button>
+    </form>
+  </div>

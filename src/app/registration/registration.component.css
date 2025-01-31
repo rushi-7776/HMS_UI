@@ -1,0 +1,110 @@
+/* Default Styles */
+.text-danger {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+.dis {
+    display: flex;
+    justify-content: space-between;
+    padding: 85px;
+}
+
+.gan {
+    /* flex: 1; */
+    max-width: 45%;
+    font-size: 25px;
+
+}
+
+.reg {
+    flex: 1;
+    max-width: 56%;
+    zoom: 1.2;
+
+}
+
+.register-container {
+    background-color: #f8f9fa;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling */
+.appoit img {
+    border-radius: 5px;
+}
+
+/* Responsive Design: When screen size is below 1100px */
+@media (max-width: 1000px) {
+    .dis {
+        flex-direction: column;
+        align-items: center;
+        /* gap: 20px; */
+        margin-top: 25px;
+        font-size: 40px;
+
+    }
+
+    /* Make the .reg (Register form) appear first */
+    .reg {
+        order: 1;
+        max-width: 100%;
+        flex: 1;
+    }
+
+    /* Make the .gan (Get Appointment) appear second */
+    .gan {
+        order: 2;
+        max-width: 100%;
+        flex: 1;
+    }
+
+    /* .register-container {
+        width: 500px;
+    } */
+
+    .appoit img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Further responsive design tweaks for smaller screens */
+@media (max-width: 768px) {
+    .dis {
+        padding: 15px;
+    }
+
+    .register-container {
+        padding: 20px;
+        margin-top: 58px;
+        width: 500px;
+
+    }
+
+    .gan h1, .reg h1 {
+        font-size: 1.5rem;
+    }
+
+    .reg button {
+        width: 35%;
+        padding: 12px;
+    }
+}
+input.ng-invalid.ng-touched {
+    border-color: red; 
+  }
+  
+  input.ng-valid.ng-touched {
+    border-color: green; 
+  }
+  
+  input {
+    border: 1.5px solid rgb(179, 179, 184); 
+    padding: 6px; 
+    border-radius: 4px;
+    width: 100%;
+ 
+  }

@@ -1,0 +1,294 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+</head>
+
+<div class="background">
+
+<div class="sidebar">
+    <h4 class="text-center py-3">Doctor Panel</h4>
+    <a href="doctors" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="#"><i class="fas fa-user-injured"></i> Patients</a>
+    <a href="#" (click)="openAppointmentsModal()" data-bs-toggle="modal" data-bs-target="#appointmentsModal">
+        <i class="fas fa-calendar-check"></i> Appointments
+    </a>
+    
+
+<!-- Modal -->
+<div class="modal fade" id="appointmentsModal" tabindex="-1" aria-labelledby="appointmentsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="appointmentsModalLabel">Appointments</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Dynamically load appointment-list component -->
+                <ng-container *ngIf="showAppointments">
+                    <app-appointment-list></app-appointment-list>
+                </ng-container>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div> 
+</div>
+ <a href="#"><i class="fas fa-file-medical"></i> Medical Records</a>
+
+      <a href="#" data-bs-toggle="modal" data-bs-target="#doctorsModal">
+          <i class="fa-solid fa-user-doctor"></i> Doctors
+      </a>
+
+      <div class="modal fade" id="doctorsModal" tabindex="-1" aria-labelledby="doctorsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="doctorsModalLabel" style="color: black;" >Available doctors</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">Dr. Ravi Jangamani</li>
+                        <li class="list-group-item">Dr. Jane Smith</li>
+                        <li class="list-group-item">Dr. Michael Lee</li>
+                        <li class="list-group-item">Dr. Susan Taylor</li>
+                        <li class="list-group-item">Dr. John Doe</li>
+                        <li class="list-group-item">Dr. Emily Davis</li>
+                        <li class="list-group-item">Dr. William Brown</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Add</button>
+
+                    <button type="button" class="btn btn-danger" data-bs-dismiss ="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#"><i class="fas fa-envelope"></i> Messages</a>
+    <a href="#"><i class="fas fa-cogs"></i> Settings</a>
+    <a href="staff"><i class="fas fa-cogs"></i> Staff</a>
+    <a href="registers"><i class="fa-solid fa-registered"></i> Register</a>
+
+ 
+</div>
+
+<div class="content">
+    <h2>Welcome, Dr. Ravi Jangamani</h2>
+    <p id="today-date"><i class="fa-solid fa-calendar-days"></i> Date: {{ todayDate }}</p>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary" data-bs-toggle="modal" data-bs-target="#todaysAppointmentsModal">
+                <div class="card-body">
+                    <h5 class="card-title">Today's Appointments</h5>
+                    <p class="card-text display-4">{{appointments.length}}</p>
+                </div>
+            </div>
+        </div>
+<!-- Modal for Today's Appointments -->
+<div class="modal fade" id="todaysAppointmentsModal" tabindex="-1" aria-labelledby="todaysAppointmentsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="todaysAppointmentsModalLabel">Today's Appointments</h5>
+                <p style="    margin: 0px; margin-left: 100px;"  id="today-date"><i class="fa-solid fa-calendar-days"></i> Date: {{ todayDate }}</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+                        <th>Doctor</th>
+                        <th>Time</th>
+                      </tr>
+                    </thead>
+            <tbody>
+              <tr *ngFor="let appointment of appointments">
+                <td>{{ appointment.ID }}</td>
+                <td>{{ appointment.FIRSTNAME }}</td>
+                <td>{{ appointment.LASTNAME }}</td>
+                <td>{{ appointment.PHONENO }}</td>
+                <td>{{ appointment.DOCTOR }}</td>
+                <td>{{ appointment.TIME }}</td>
+              </tr>
+            </tbody>
+          </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <div class="col-md-3">
+            <div class="card text-white bg-success" data-bs-toggle="modal" data-bs-target="#staffModal">
+                <div class="card-body">
+                    <h5 class="card-title">Available Staff</h5>
+                    <p class="card-text display-4">{{staffs.length}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Staff List -->
+<div class="modal fade" id="staffModal" tabindex="-1" aria-labelledby="staffModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="staffModalLabel">Available Staff</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table id="example" class="table  m-auto table-hover table-striped " style="max-width:1400px; border: 1px solid gray;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th> 
+                        <th>Name</th>
+                        <th>Mobile No</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let staff of staffs">
+                        <td>{{ staff.id }}</td> 
+                        <td>{{ staff.name }}</td> 
+                        <td>{{ staff.mobile }}</td> 
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3">
+    <div class="card text-white bg-warning" data-bs-toggle="modal" data-bs-target="#operationsModal">
+        <div class="card-body">
+            <h5 class="card-title">Operations Scheduled</h5>
+            <p class="card-text display-4">5</p>
+        </div>
+    </div>
+</div>
+<!-- Modal for Operations List -->
+<div class="modal fade" id="operationsModal" tabindex="-1" aria-labelledby="operationsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-white">
+                <h5 class="modal-title" id="operationsModalLabel">Scheduled Operations</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Patient Name</th>
+                            <th>Operation Type</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>Appendectomy</td>
+                            <td>Jan 13, 2025</td>
+                            <td>10:00 AM</td>
+                            <td><span class="badge bg-success">Confirmed</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jane Smith</td>
+                            <td>Gallbladder Surgery</td>
+                            <td>Jan 13, 2025</td>
+                            <td>11:30 AM</td>
+                            <td><span class="badge bg-warning">Pending</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Michael Lee</td>
+                            <td>Hip Replacement</td>
+                            <td>Jan 13, 2025</td>
+                            <td>01:00 PM</td>
+                            <td><span class="badge bg-danger">Cancelled</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Emily Brown</td>
+                            <td>Knee Surgery</td>
+                            <td>Jan 13, 2025</td>
+                            <td>02:30 PM</td>
+                            <td><span class="badge bg-success">Confirmed</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>David Wilson</td>
+                            <td>Heart Bypass</td>
+                            <td>Jan 13, 2025</td>
+                            <td>04:00 PM</td>
+                            <td><span class="badge bg-success">Confirmed</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-danger" data-bs-toggle="modal" data-bs-target="#emergencyModal">
+                <div class="card-body">
+                    <h5 class="card-title">Emergency Alerts</h5>
+                    <p class="card-text display-4">3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Modal for Emergency Alerts -->
+<div class="modal fade" id="emergencyModal" tabindex="-1" aria-labelledby="emergencyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="emergencyModalLabel">Emergency Alerts</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fa-solid fa-fire-extinguisher me-3 text-danger"></i>
+                        Oxygen Cylinder is running low!
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fa-solid fa-heart-pulse me-3 text-warning"></i>
+                        Heart Monitor needs maintenance!
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="fa-solid fa-thermometer-half me-3 text-primary"></i>
+                        Temperature Control malfunction detected!
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<app-visitorpage></app-visitorpage>
+</div>
+</div>

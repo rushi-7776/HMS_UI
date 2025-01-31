@@ -1,0 +1,46 @@
+.gan{
+    padding-left: 85px;
+    padding-right: 404px;
+    /* background-image: url('Hospital1.webp'); */
+}
+.appoit{
+    padding-left: 85px;
+}
+.visit-form{
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); */
+    width: 300px;
+    margin-top: -600px;
+    margin-left: 780px;
+    margin-bottom: 303px;
+    padding: 22px;
+}
+h2{
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fffa05;
+    font-size: x-large;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 23px;
+
+  }

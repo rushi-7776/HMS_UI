@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ensures full width */
+    overflow-x: hidden; /* Hides horizontal scrolling */
+}
+
+.container {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    height: 100vh;
+    width: 100%; /* Ensures container does not exceed screen width */
+    overflow-y: auto;
+}
+
+.mid {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    width: 100%; /* Prevents overflowing */
+}
+
+.footer-column {
+    flex: 1;
+    padding: 30px; /* Reduced padding for better spacing */
+    color: white;
+}
+
+.footer-location {
+    background-color: #4793cb;
+}
+
+.footer-contact {
+    background-color: #3b88c5;
+}
+
+.footer-hours {
+    background-color: #517abe;
+}
+
+.service {
+    text-align: center;
+    margin: 30px 0; /* Adjusted margin */
+    flex: 1;
+}
+
+.service h3 {
+    font-size: 32px; /* Slightly reduced for better mobile view */
+    color: #333;
+}
+
+.service p {
+    font-size: 18px; /* Reduced size for better fit */
+    margin: 10px 0;
+    color: #555;
+}
+
+.table-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 15px; /* Adjusted padding */
+    margin-top: 0;
+    width: 100%; /* Prevents overflowing */
+}
+
+.table-container table {
+    border: 2px solid #ccc;
+    border-collapse: collapse;
+    margin: 10px;
+    width: calc(25% - 20px); /* Responsive width */
+    margin-bottom: 20px;
+}
+.carousel-inner img {
+  height: 500px; /* Adjust as needed */
+  object-fit: cover; /* Ensures images cover the space without distortion */
+  /* width: 100%; Ensures full width */
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+    .table-container table {
+        width: calc(48% - 20px); /* Adjusted for medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .table-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .table-container table {
+        width: 100%; /* Full width for small screens */
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 901px) {
+    .table-container {
+        flex-wrap: nowrap;
+    }
+    .table-container table {
+        width: calc(25% - 20px); /* Re-adjust width */
+    }
+}
+
+.table-container td {
+    padding: 10px;
+    text-align: center;
+}
+
+.table-container h1 {
+    margin-bottom: 10px;
+}
+
+.dt {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: Arial, sans-serif;
+    margin-bottom: 60px;
+    flex-wrap: wrap; 
+    width: 100%; 
+}
+
+.co {
+    background-color: #f8f8f8;
+    flex: 1;
+    overflow: auto;
+}
+
+.te {
+    text-align: center;
+}
+
+.gan {
+    padding-left: 30px; 
+    padding-right: 30px; 
+}
+
+.appoit {
+    padding-left: 30px; /* Unified padding */
+}
+.table-container, .mid, .container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+  
+  .carousel-caption {
+    right: 500px;
+    position: absolute;
+    left: 28%;
+    transform: translate(-50%, -150%);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    border-radius: 50px;
+  }
+  
+  .carousel-caption h5 {
+    font-size: 4rem; /* Adjust font size as needed */
+  }
+  
+  .carousel-caption p {
+    font-size: 1rem;
+  }
+  /* Animation for h5 (Title) to come from top */
+@keyframes slideFromTop {
+    from {
+      transform: translatex(-80px);
+      opacity: 0.5;
+    }
+    to {
+      transform: translatex(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-top {
+    animation: slideFromTop 3s ease-out;
+  }
+  
+  @keyframes slideFromBottom {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-bottom {
+    animation: slideFromBottom 2s ease-out;
+  }
+.carousel-inner {
+    /* height: 630px; You can adjust this value */
+    overflow: hidden; 
+  }
+  
+  .carousel-item img {
+    height: 100%; 
+    object-fit: cover;
+  } 
+  .carousel-img {
+    margin-top: 110px;
+  }

@@ -1,0 +1,25 @@
+<div>
+    <h2>Register</h2>
+    <form (ngSubmit)="register()">
+      <label for="name" class="form-label ps-2 m-0 ">Staff Name:</label>
+      <input type="text" id="name" name="name" class="form-control mb-2" [(ngModel)]="name" placeholder="Enter Staff Name">
+    
+      <label for="mobile" class="form-label ps-2 m-0">Mobile No:</label>
+      <input type="text" id="mobile" name="mobile" class="form-control mb-2" [(ngModel)]="mobile" placeholder="Enter Staff Mobile No">
+         
+      <label for="todayDate" class="form-label ps-2 m-0">Today's Date:</label>
+      <input type="date" id="dates" name="dates" class="form-control mb-2" [(ngModel)]="dates">
+
+      <label for="todayDate" class="form-label ps-2 m-0">Time:</label>
+      <input type="time" id="times" name="times" class="form-control mb-2" [(ngModel)]="times">
+
+      <label for="position" class="form-label ps-2 m-0">Position:</label>
+<select id="position" name="position" class="form-control mb-2" [(ngModel)]="position">
+  <option value="isActive">isActive</option>
+  <option value="notAvailable">notAvailable</option>
+</select>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  

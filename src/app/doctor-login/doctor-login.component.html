@@ -1,0 +1,22 @@
+<!-- doctor-login.component.html -->
+<div class="login-container">
+  <h2>Doctor Login</h2>
+  <form (ngSubmit)="onLogin()">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" placeholder="Enter email"/>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Enter password"/>
+    </div>
+    <button type="submit">Login</button>
+    <br>
+    <br>
+    <button routerLink="/staff" type="submit">Staf-login</button>
+
+    <!-- <a routerLink="/doctors" class="nav-link text-dark fs-5"> Dashboard</a> -->
+
+  </form>
+
+</div>

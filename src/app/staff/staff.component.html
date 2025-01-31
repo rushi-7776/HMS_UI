@@ -1,0 +1,18 @@
+<div class="container">
+    <table id="example" class="table m-auto table-hover table-striped" style="max-width:1400px;">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th> 
+                <th>Name</th>
+                <th>Mobile No</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let staff of staffs">
+                <td>{{ staff.id }}</td> 
+                <td>{{ staff.name }}</td> 
+                <td>{{ staff.mobile }}</td> 
+            </tr>
+        </tbody>
+    </table>
+</div>
